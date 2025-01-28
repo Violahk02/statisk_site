@@ -1,0 +1,59 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* main {
+  max-width: 800px;
+} */
+
+body {
+  background-color: rgb(234, 233, 228);
+}
+
+h3 {
+  font-family: Bodoni Moda;
+  font-weight: 300;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.category {
+  width: 300px;
+  border: 1px solid black;
+  padding: 30px;
+  margin: 5px;
+  a {
+    width: 100%;
+    border: 1px solid black;
+    padding: 15px;
+    font-family: Bodoni Moda;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: black;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+.category a:hover {
+  background: rgb(188, 175, 158);
+}
+
+@media (min-width: 800px) {
+  .category_list_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
