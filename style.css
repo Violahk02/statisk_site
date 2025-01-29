@@ -160,6 +160,9 @@ a {
 }
 
 .product_list_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin: 40px;
 }
 
@@ -169,10 +172,56 @@ a {
   }
   img {
     border: 1px solid black;
+    height: auto;
+    object-fit: cover;
   }
   .info {
     padding: 8px;
     border: 1px solid black;
+    color: black;
+  }
+}
+
+.produkt_soldout {
+  display: grid;
+  p {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    place-self: start;
+    font-family: inter;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    z-index: 2;
+    background: rgb(22, 22, 22);
+    color: white;
+    padding: 8px;
+    font-weight: 400;
+  }
+  img {
+    opacity: 50%;
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+}
+
+.discount {
+  display: grid;
+  p {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    place-self: start end;
+    font-family: inter;
+    font-size: 0.7rem;
+    margin-top: 20px;
+    z-index: 2;
+    background: rgb(211, 36, 36);
+    color: white;
+    padding: 8px;
+    font-weight: 400;
+  }
+  img {
+    grid-row: 1/2;
+    grid-column: 1/2;
   }
 }
 
@@ -186,6 +235,57 @@ a {
 
   .product_list_container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .produkt {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-row: span 3;
+    gap: 0;
+  }
+
+  .produkt_soldout {
+    display: grid;
+    p {
+      grid-row: 1/2;
+      grid-column: 1/2;
+      place-self: start;
+      font-family: inter;
+      margin-top: 20px;
+      font-size: 1rem;
+      z-index: 2;
+      background: rgb(22, 22, 22);
+      color: white;
+      padding: 8px;
+      font-weight: 400;
+    }
+    img {
+      opacity: 50%;
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+  }
+
+  .discount {
+    display: grid;
+    p {
+      grid-row: 1/2;
+      grid-column: 1/2;
+      place-self: start end;
+      font-family: inter;
+      font-size: 1rem;
+      margin-top: 20px;
+      z-index: 2;
+      background: rgb(211, 36, 36);
+      color: white;
+      padding: 8px;
+      font-weight: 400;
+    }
+    img {
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
   }
 }
