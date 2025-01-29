@@ -18,6 +18,7 @@ img {
 /* Menu */
 header {
   position: relative;
+  background: white;
   border-top: 1px solid;
   border-bottom: 1px solid;
   margin-top: 15px;
@@ -144,12 +145,14 @@ a {
 .category {
   width: 100%;
   border: 1px solid black;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 10px;
+  background: white;
   a {
     width: 100%;
-    border: 1px solid black;
-    padding: 15px;
+    /* border: 1px solid black; */
+    padding: 5px;
+    /* background: white; */
     font-family: Bodoni Moda;
     font-weight: 500;
     font-size: 1.3rem;
@@ -159,8 +162,11 @@ a {
   }
 }
 
-.category a:hover {
-  background: rgb(188, 175, 158);
+.category:hover {
+  background: rgb(234, 233, 228);
+  a {
+    background: rgb(234, 233, 228);
+  }
 }
 
 .product_list_container {
@@ -230,7 +236,7 @@ a {
 }
 
 /* Produkt detaljer */
-.grid_5 {
+.grid_2 {
   background-color: rgb(244, 244, 244);
   border: 1px solid black;
   margin: 40px;
@@ -240,6 +246,12 @@ a {
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    a {
+      color: black;
+    }
+    a:hover {
+      border-bottom: 1px solid black;
+    }
   }
   h1 {
     text-align: left;
@@ -278,7 +290,8 @@ a {
 
   .product_list_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+
     gap: 10px;
   }
 
@@ -333,7 +346,7 @@ a {
   }
 
   /* Produktdetaljer */
-  .grid_5 {
+  .grid_2 {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
 
@@ -342,7 +355,6 @@ a {
     }
     h2 {
       font-size: 2rem;
-      grid-column: 4;
     }
     img {
       border-right: 1px solid black;
@@ -350,6 +362,16 @@ a {
     }
     .knap {
       width: 40%;
+    }
+    .detaljer {
+      margin-left: 60px;
+      .sale_price {
+        color: rgb(211, 36, 36);
+        margin-top: 8px;
+      }
+      .price {
+        margin-top: 30%;
+      }
     }
   }
 }
