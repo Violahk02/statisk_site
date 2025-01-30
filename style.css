@@ -26,6 +26,7 @@ header {
   justify-content: space-between; /* The space-between value displays the flex items with space between them: */
   /* align-items: center; */
   padding: 20px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .menu {
@@ -148,6 +149,7 @@ a {
   padding: 20px;
   margin-bottom: 10px;
   background: white;
+  box-shadow: 5px 5px 5px grey;
   a {
     width: 100%;
     /* border: 1px solid black; */
@@ -177,6 +179,7 @@ a {
 }
 
 .produkt {
+  box-shadow: 5px 5px 5px grey;
   p {
     padding: 3px;
   }
@@ -190,6 +193,10 @@ a {
     border: 1px solid black;
     color: black;
   }
+}
+
+.produkt:hover {
+  background: rgb(197, 197, 192);
 }
 
 .produkt_soldout {
@@ -206,6 +213,7 @@ a {
     color: white;
     padding: 8px;
     font-weight: 400;
+    box-shadow: 2px 2px 2px grey;
   }
   img {
     opacity: 50%;
@@ -216,6 +224,7 @@ a {
 
 .discount {
   display: grid;
+
   p {
     grid-row: 1/2;
     grid-column: 1/2;
@@ -228,6 +237,7 @@ a {
     color: white;
     padding: 8px;
     font-weight: 400;
+    box-shadow: 2px 2px 2px grey;
   }
   img {
     grid-row: 1/2;
@@ -238,6 +248,7 @@ a {
 /* Produkt detaljer */
 .grid_2 {
   background-color: rgb(244, 244, 244);
+  box-shadow: 5px 5px 5px grey;
   border: 1px solid black;
   margin: 40px;
   .sizes {
@@ -265,10 +276,21 @@ a {
   img {
     border-bottom: 1px solid black;
   }
+  .price_knap {
+    display: flex;
+    flex-direction: column;
+    min-height: 170px;
+    justify-content: end;
+  }
   .detaljer {
     margin: 15px;
+    .sale_price {
+      color: rgb(211, 36, 36);
+      margin-top: 8px;
+    }
   }
   .knap {
+    box-shadow: 5px 5px 5px grey;
     background: black;
     color: white;
     padding: 10px;
@@ -280,6 +302,11 @@ a {
   }
 }
 
+.knap:hover {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
 @media (min-width: 800px) {
   /* Forside - Kategorier */
   .category_list_container {
@@ -363,15 +390,14 @@ a {
     .knap {
       width: 40%;
     }
+    .price_knap {
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      justify-content: end;
+    }
     .detaljer {
       margin-left: 60px;
-      .sale_price {
-        color: rgb(211, 36, 36);
-        margin-top: 8px;
-      }
-      .price {
-        margin-top: 30%;
-      }
     }
   }
 }

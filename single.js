@@ -25,18 +25,18 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
             <a href="">L</a>
             <a href="">XL</a>
           </div>
-          <div class="price">
-            <h3>Prev. DKK ${data.price},-</h3>
-            <div class="sale_price">
-              <h3>Now. DKK 2039,-</h3>
-            </div>
-          </div>
-          <div>
-            <a href="">
-              <div class="knap">
-                <p>ADD TO CART</p>
+          <div class="price_knap">
+            <div class="price">
+              <h3>Prev. DKK ${data.price},-</h3>
+              <div class="sale_price">
+                <h3>Now. DKK 2039,-</h3>
               </div>
-            </a>
+            </div>
+              <a href="">
+                <div class="knap">
+                  <p>ADD TO CART</p>
+                </div>
+              </a>
           </div>
         </div>
       `;
