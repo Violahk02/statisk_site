@@ -180,15 +180,19 @@ a {
 
 .produkt {
   box-shadow: 5px 5px 5px grey;
-  border: 1px solid black;
-  color: black;
   p {
     padding: 3px;
   }
   img {
-    border-bottom: 1px solid black;
+    border: 1px solid black;
     height: auto;
     object-fit: cover;
+  }
+  .info {
+    padding: 8px;
+    border: 1px solid black;
+    color: black;
+    /* height: 100%; */
   }
 }
 

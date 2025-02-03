@@ -29,20 +29,19 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
   .then((data) => showList(data));
 
 function showList(products) {
-  console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `<a href="produkt.html" class="produkt">
-          <div>
+  // console.log(products);
+  const markup = products
+    .map(
+      (product) => `<a href="produkt.html" class="produkt">
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
-            
+            <div class="info">
               <p><strong>${product.brandname}</strong></p>
               <p>${product.productdisplayname}</p>
               <p><strong>DKK ${product.price},-</strong></p>
             </div>
-        </a>`;
-    })
+        
+        </a>`
+    )
     .join("");
   console.log(markup);
   product_list_container.innerHTML = markup;
