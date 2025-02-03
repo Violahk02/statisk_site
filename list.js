@@ -36,35 +36,14 @@ function showList(products) {
       markup += `<a href="produkt.html" class="produkt">
           <div>
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
-            <div class="info">
+            
               <p><strong>${product.brandname}</strong></p>
               <p>${product.productdisplayname}</p>
               <p><strong>DKK ${product.price},-</strong></p>
             </div>
-          </div>
         </a>`;
     })
     .join("");
   console.log(markup);
   product_list_container.innerHTML = markup;
-}
-
-{
-  /* <a href="produkt.html" class="produkt">
-  <div class="discount">
-    <img src="billeder/track_jacket2.webp" alt="track_jacket2" />
-    <p>-49%</p>
-  </div>
-  <div>
-    <div class="info">
-      <p>
-        <strong>${product.brandname}</strong>
-      </p>
-      <p>${product.productdisplayname}</p>
-      <p>
-        <strong> DKK ${product.price},-</strong>
-      </p>
-    </div>
-  </div>
-</a>; */
 }
