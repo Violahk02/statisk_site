@@ -21,9 +21,10 @@
 // document.querySelector("ul").innerHTML = string;
 // Laver listen om til en tekst string, som kommer det ind i html'en
 
+const category = new URLSearchParams(window.location.search).get("category");
 let product_list_container = document.querySelector(".product_list_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`)
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
   // linker til json fil - Med data for produkterne.
   .then((response) => response.json())
   .then((data) => showList(data));
@@ -32,7 +33,7 @@ function showList(products) {
   // console.log(products);
   const markup = products
     .map(
-      (product) => `<a href="produkt.html" class="produkt">
+      (product) => `<a href="produkt.html?id=${product.id}" class="produkt">
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
             <div class="info">
               <p><strong>${product.brandname}</strong></p>
