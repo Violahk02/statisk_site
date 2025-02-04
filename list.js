@@ -36,17 +36,50 @@ function showList(products) {
     .map(
       (product) =>
         `
-      <a href="produkt.html?id=${product.id}" class="produkt">
-            <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
-            <div class="info">
+      <a href="produkt.html?id=${product.id}" class="produkt ${product.soldout && "produkt_soldout"} ${product.discount && "produkt_discount"}">
+      <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
+      <div class="discount ${!product.discount && "skjul"}">
+            <p>-${product.discount}%</p>
+      </div>
+      <div class="soldout ${!product.soldout && "skjul"}">
+        <p>Sold Out</p>
+      </div>
+            <div class="info"> 
               <p><strong>${product.brandname}</strong></p>
               <p>${product.productdisplayname}</p>
               <p><strong>DKK ${product.price},-</strong></p>
             </div>
-        
         </a>`
     )
     .join("");
   console.log(markup);
   product_list_container.innerHTML = markup;
 }
+
+/* <a href="produkt.html" class="produkt">
+          <div class="produkt_soldout">
+            <img src="https://kea-alt-del.dk/t7/images/webp/640/1530.webp" alt="track_jacket" />
+            <p>Sold out</p>
+          </div>
+          <div>
+            <div class="info">
+              <p><strong>Puma</strong></p>
+              <p>Sports Track Jacket</p>
+              <p><strong>DKK 4299,-</strong></p>
+            </div>
+          </div>
+        </a> */
+
+// <a href="produkt.html" class="produkt">
+//   <div class="discount">
+//     <img src="https://kea-alt-del.dk/t7/images/webp/640/1528.webp" alt="track_jacket2" />
+//     <p>-49%</p>
+//   </div>
+//   <div>
+//     <div class="info">
+//       <p><strong>Puma</strong></p>
+//       <p>Black Fleece Jacket</p>
+//       <p><strong>Prev. DKK 3999,-</strong></p>
+//     </div>
+//   </div>
+// </a>

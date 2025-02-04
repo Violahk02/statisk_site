@@ -200,8 +200,24 @@ a {
   background: rgb(197, 197, 192);
 }
 
-.produkt_soldout {
-  display: grid;
+.produkt {
+  position: relative;
+}
+
+.produkt_soldout .soldout {
+  z-index: 2;
+  background: rgb(22, 22, 22);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  img {
+    opacity: 50%;
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  /* display: grid;
   p {
     grid-row: 1/2;
     grid-column: 1/2;
@@ -216,15 +232,20 @@ a {
     font-weight: 400;
     box-shadow: 2px 2px 2px grey;
   }
-  img {
-    opacity: 50%;
-    grid-row: 1/2;
-    grid-column: 1/2;
-  }
+   */
 }
 
-.discount {
-  display: grid;
+.produkt_discount .discount {
+  z-index: 2;
+  background: rgb(165, 43, 43);
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  img {
+    opacity: 50%;
+  }
+  /* display: grid;
   p {
     grid-row: 1/2;
     grid-column: 1/2;
@@ -242,7 +263,11 @@ a {
   img {
     grid-row: 1/2;
     grid-column: 1/2;
-  }
+  } */
+}
+
+.skjul {
+  visibility: hidden;
 }
 
 /* Produkt detaljer */
@@ -328,47 +353,70 @@ a {
     gap: 0;
   }
 
-  .produkt_soldout {
-    display: grid;
+  .produkt_soldout .soldout {
+    z-index: 2;
+    background: rgb(22, 22, 22);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      opacity: 50%;
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+
+    /* display: grid;
     p {
       grid-row: 1/2;
       grid-column: 1/2;
       place-self: start;
       font-family: inter;
       margin-top: 20px;
-      font-size: 1rem;
+      font-size: 0.7rem;
       z-index: 2;
       background: rgb(22, 22, 22);
       color: white;
       padding: 8px;
       font-weight: 400;
+      box-shadow: 2px 2px 2px grey;
     }
-    img {
-      opacity: 50%;
-      grid-row: 1/2;
-      grid-column: 1/2;
-    }
+     */
   }
 
-  .discount {
-    display: grid;
-    p {
-      grid-row: 1/2;
-      grid-column: 1/2;
-      place-self: start end;
-      font-family: inter;
-      font-size: 1rem;
-      margin-top: 20px;
-      z-index: 2;
-      background: rgb(211, 36, 36);
-      color: white;
-      padding: 8px;
-      font-weight: 400;
-    }
+  .produkt_discount .discount {
+    z-index: 2;
+    background: rgb(165, 43, 43);
+    position: absolute;
+    top: 0;
+    right: 0;
+
     img {
-      grid-row: 1/2;
-      grid-column: 1/2;
+      opacity: 50%;
     }
+    /* display: grid;
+  p {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    place-self: start end;
+    font-family: inter;
+    font-size: 0.7rem;
+    margin-top: 20px;
+    z-index: 2;
+    background: rgb(211, 36, 36);
+    color: white;
+    padding: 8px;
+    font-weight: 400;
+    box-shadow: 2px 2px 2px grey;
+  }
+  img {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  } */
+  }
+
+  .ison_discount {
+    visibility: visible;
   }
 
   /* Produktdetaljer */

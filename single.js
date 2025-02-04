@@ -9,7 +9,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((data) => {
     // Tager svaret og gør det til gyldig data.
     grid_2.innerHTML = `
-        <div class="discount">
+        <div class="discount ${data.discount && "ison_discount"}">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" />
           <p>-${data.discount}%</p>
         </div>
