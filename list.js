@@ -37,8 +37,8 @@ function showList(products) {
       (product) =>
         `
       <a href="produkt.html?id=${product.id}" class="produkt ${product.soldout && "produkt_soldout"} ${product.discount && "produkt_discount"}">
-      <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="puma_taske" />
-      <div class="discount ${!product.discount && "skjul"}">
+      <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"  class="produkt_img" alt="puma_taske" />
+       <div class="discount ${!product.discount && "skjul"}">
             <p>-${product.discount}%</p>
       </div>
       <div class="soldout ${!product.soldout && "skjul"}">

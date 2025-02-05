@@ -11,123 +11,17 @@ img {
   display: block;
 }
 
-.logo {
-  width: 15%;
-}
-
-/* Menu */
-header {
-  position: relative;
-  background: white;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between; /* The space-between value displays the flex items with space between them: */
-  /* align-items: center; */
-  padding: 20px;
-  box-shadow: 5px 5px 5px grey;
-}
-
-.menu {
-  display: flex;
-  list-style: none;
-  /* margin: 0;
-  padding: 0; */
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-.button-link {
-  text-decoration: none; /* Removes the underline */
-  font-family: Bodoni moda;
-  font-size: 1.2rem;
-  font-weight: 300; /* font tykkelse */
-  color: black;
-  padding: 20px;
-  transition: transform 0.2s; /* Animation */
-}
-
-.button-link :hover {
-  transform: scale(1.6);
-}
-
 body {
-  background-color: rgb(234, 233, 228);
-}
-
-/* Burgermenu */
-.burger {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.burger .line {
-  width: 100%;
-  height: 1px;
-  background-color: black;
-  margin-bottom: 5px;
-  transition: 0.2s linear;
-}
-.burger {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  .logo {
-    width: 40%;
-  }
-
-  .menu {
-    display: none;
-  }
-  .burger {
-    display: block;
-  }
-  .burger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
-  }
-
-  .burger.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
-    /* Stregen bliver usynlig, når der bliver trykket, da den danner et kryds, kun med line 1 og 2 */
-  }
-
-  .burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
-  }
-
-  nav.active .menu {
-    display: block;
-    background-color: #ffffff;
-    position: absolute;
-    top: 94px;
-    left: 0;
-    width: 100%;
-    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
-    z-index: 4;
-  }
-
-  nav.active .menu li {
-    margin: 10px 20px;
-  }
-
-  nav.active .menu a {
-    font-size: 24px;
-  }
+  /* background-color: rgb(234, 233, 228); */
+  background: white;
 }
 
 h1 {
   text-align: center;
   margin-top: 40px;
-  font-family: Bodoni Moda;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -152,9 +46,7 @@ a {
   box-shadow: 5px 5px 5px grey;
   a {
     width: 100%;
-    /* border: 1px solid black; */
     padding: 5px;
-    /* background: white; */
     font-family: Bodoni Moda;
     font-weight: 500;
     font-size: 1.3rem;
@@ -175,99 +67,76 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin: 40px;
+  margin: 20px;
 }
 
 .produkt {
+  max-width: 300px; /* Sikrer, at produktkortene ikke bliver for store */
+  min-width: 150px; /* Forhindrer, at de bliver for små */
+  width: 100%;
   box-shadow: 5px 5px 5px grey;
+  border: 1px solid black;
+  /* border-radius: 20px; */
   p {
     padding: 3px;
   }
   img {
-    border: 1px solid black;
+    width: 100%; /* Fylder hele produktkortets bredde */
+    border-bottom: 1px solid black;
     height: auto;
     object-fit: cover;
   }
   .info {
     padding: 8px;
-    border: 1px solid black;
     color: black;
-    /* height: 100%; */
   }
 }
 
 .produkt:hover {
-  background: rgb(197, 197, 192);
+  .info {
+    background: rgb(234, 233, 228);
+  }
+  img {
+    opacity: 70%;
+  }
 }
 
 .produkt {
   position: relative;
 }
 
+.produkt_soldout .produkt_img {
+  opacity: 50%;
+}
+
 .produkt_soldout .soldout {
   z-index: 2;
   background: rgb(22, 22, 22);
   position: absolute;
-  top: 0;
+  top: 25px;
   left: 0;
-
-  img {
-    opacity: 50%;
-    grid-row: 1/2;
-    grid-column: 1/2;
-  }
-
-  /* display: grid;
-  p {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    place-self: start;
-    font-family: inter;
-    margin-top: 20px;
-    font-size: 0.7rem;
-    z-index: 2;
-    background: rgb(22, 22, 22);
-    color: white;
-    padding: 8px;
-    font-weight: 400;
-    box-shadow: 2px 2px 2px grey;
-  }
-   */
+  padding: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px grey;
+  font-size: 0.8rem;
+  font-family: inter;
 }
 
 .produkt_discount .discount {
   z-index: 2;
   background: rgb(165, 43, 43);
   position: absolute;
-  top: 0;
+  top: 25px;
   right: 0;
-
-  img {
-    opacity: 50%;
-  }
-  /* display: grid;
-  p {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    place-self: start end;
-    font-family: inter;
-    font-size: 0.7rem;
-    margin-top: 20px;
-    z-index: 2;
-    background: rgb(211, 36, 36);
-    color: white;
-    padding: 8px;
-    font-weight: 400;
-    box-shadow: 2px 2px 2px grey;
-  }
-  img {
-    grid-row: 1/2;
-    grid-column: 1/2;
-  } */
+  padding: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px grey;
+  font-size: 0.8rem;
+  font-family: inter;
 }
 
 .skjul {
-  visibility: hidden;
+  display: none;
 }
 
 /* Produkt detaljer */
@@ -295,9 +164,7 @@ a {
   h2 {
     margin-bottom: 20px;
   }
-  /* p {
-    margin-bottom: 15px;
-  } */
+
   img {
     border-bottom: 1px solid black;
   }
@@ -332,8 +199,20 @@ a {
   color: black;
   border: 1px solid black;
 }
+
 @media (min-width: 800px) {
   /* Forside - Kategorier */
+
+  .category {
+    display: flex;
+    height: 200px;
+    margin-bottom: 0;
+    a {
+      align-self: center;
+      font-size: 2rem;
+    }
+  }
+
   .category_list_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -343,7 +222,7 @@ a {
   .product_list_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
   }
 
   .produkt {
@@ -357,66 +236,28 @@ a {
     z-index: 2;
     background: rgb(22, 22, 22);
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
-
+    font-size: 1rem;
     img {
       opacity: 50%;
-      grid-row: 1/2;
-      grid-column: 1/2;
     }
-
-    /* display: grid;
-    p {
-      grid-row: 1/2;
-      grid-column: 1/2;
-      place-self: start;
-      font-family: inter;
-      margin-top: 20px;
-      font-size: 0.7rem;
-      z-index: 2;
-      background: rgb(22, 22, 22);
-      color: white;
-      padding: 8px;
-      font-weight: 400;
-      box-shadow: 2px 2px 2px grey;
-    }
-     */
   }
 
   .produkt_discount .discount {
     z-index: 2;
     background: rgb(165, 43, 43);
     position: absolute;
-    top: 0;
+    top: 30px;
     right: 0;
-
+    font-size: 1rem;
     img {
       opacity: 50%;
     }
-    /* display: grid;
-  p {
-    grid-row: 1/2;
-    grid-column: 1/2;
-    place-self: start end;
-    font-family: inter;
-    font-size: 0.7rem;
-    margin-top: 20px;
-    z-index: 2;
-    background: rgb(211, 36, 36);
-    color: white;
-    padding: 8px;
-    font-weight: 400;
-    box-shadow: 2px 2px 2px grey;
-  }
-  img {
-    grid-row: 1/2;
-    grid-column: 1/2;
-  } */
   }
 
-  .ison_discount {
-    visibility: visible;
+  .skjul {
+    visibility: hidden;
   }
 
   /* Produktdetaljer */
