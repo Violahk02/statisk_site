@@ -9,9 +9,13 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((data) => {
     // Tager svaret og gør det til gyldig data.
     grid_2.innerHTML = `
-        <div class="discount">
-          <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" />
-          <p>-${data.discount}%</p>
+
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" />
+        <div class="single_discount ${!data.discount && "skjul"}">     
+            <p>-${data.discount}%</p>
+        </div>
+        <div class="single_soldout ${!data.soldout && "skjul"}">
+          <p>Sold Out</p>
         </div>
         <div class="detaljer">
           <h1>${data.brandname}</h1>
@@ -31,10 +35,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
           </div>
           <div class="price_knap">
             <div class="price">
-              <h3>Prev. DKK ${data.price},-</h3>
-              <div class="sale_price">
-                <h3>Now. DKK 2039,-</h3>
-              </div>
+              <h3> DKK ${data.price},-</h3>
             </div>
               <a href="">
                 <div class="knap">
