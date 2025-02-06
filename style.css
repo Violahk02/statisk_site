@@ -221,6 +221,25 @@ a {
   border: 1px solid black;
 }
 
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 10px;
+  margin: 20px;
+  a {
+    border: 1px solid black;
+    padding: 8px;
+    color: black;
+  }
+}
+
+.filter a:hover {
+  background: black;
+  color: white;
+}
+
 @media (min-width: 800px) {
   /* Forside - Kategorier */
   .category {
@@ -317,5 +336,18 @@ a {
   .single_soldout {
     top: 25px;
     left: 0;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    a {
+      border: 1px solid black;
+      padding: 8px;
+      color: black;
+    }
   }
 }

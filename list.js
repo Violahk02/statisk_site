@@ -23,6 +23,7 @@
 
 const category = new URLSearchParams(window.location.search).get("category");
 let product_list_container = document.querySelector(".product_list_container");
+
 document.querySelector("h1").textContent = category;
 
 fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
